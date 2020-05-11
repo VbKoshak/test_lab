@@ -2,6 +2,12 @@ package com.solvd.lab.automation.formatter.util;
 
 public class TabUtil {
 
+  /**
+   * makes a string of proper count of tabs
+   *
+   * @param tabCount - number of tabs needed
+   * @return - String of tabs
+   */
   private static String makeTab(int tabCount) {
     String tabs = "";
     for (int i = 0; i < tabCount; i++){
@@ -10,6 +16,14 @@ public class TabUtil {
     return tabs;
   }
 
+  /**
+   * normalizes tabs in a string :
+   *      after each `{` tab Count increases
+   *      after each `}` tab Count decreases
+   *      after new line tabs added
+   * @param input
+   * @return
+   */
   public static String normalizeTabs(String input){
     int length = input.length();
 
