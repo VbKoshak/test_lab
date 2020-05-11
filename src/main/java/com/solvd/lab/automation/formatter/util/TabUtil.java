@@ -40,7 +40,7 @@ public class TabUtil {
       if (ch == '{'){
         tabs = makeTab(++tabCount);
       } else if (ch == '\n') {
-        if (input.charAt(i+1) == '}') {
+        if ((length > i + 1) && (input.charAt(i+1) == '}')) {
           tabs = makeTab(--tabCount);
         }
         result += tabs;
