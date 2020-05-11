@@ -35,13 +35,15 @@ public class TabUtil {
 
     for (int i = 0; i < length; i++) {
       ch = input.charAt(i);
+
       result += ch;
       if (ch == '{'){
         tabs = makeTab(++tabCount);
       } else if (ch == '\n') {
+        if (input.charAt(i+1) == '}') {
+          tabs = makeTab(--tabCount);
+        }
         result += tabs;
-      } else if (ch == '}') {
-        tabs = makeTab(--tabCount);
       }
     }
 
